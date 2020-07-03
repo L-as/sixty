@@ -74,6 +74,7 @@ data Query a where
   ClosureConvertedType :: Name.Lifted -> Query (ClosureConverted.Type Void)
   ClosureConvertedConstructorType :: Name.QualifiedConstructor -> Query (Telescope Name ClosureConverted.Type ClosureConverted.Type Void)
   Applicative :: Name.Lifted -> Query (Maybe Applicative.Definition)
+  ConstructorTag :: Name.QualifiedConstructor -> Query (Maybe Int)
 
 fetchImportedName
   :: MonadFetch Query m
